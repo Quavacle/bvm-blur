@@ -48,8 +48,9 @@ image = Image.new([
 puts "-----------------"
 puts "--Initial Image--"
 image.output_image
-puts " "
-image.blur
+puts "How many steps shall we blur today?"
+input = gets.chomp.to_i
+image.blur(input)
 puts "--Blurred Image--"
 image.output_image
 puts "-----------------"
