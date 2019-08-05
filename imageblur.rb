@@ -9,15 +9,15 @@ class Image
 
   def blur(distance = 1)
     distance.times do
-    locate
-    @location_array.each do |y, x|
-      @main[y -1][x] = 1 unless y == 0
-      @main[y +1][x] = 1 unless y == @main.count - 1
-      @main[y][x +1] = 1 unless x == @main.count
-      @main[y][x -1] = 1 unless x == 0
+      locate
+      @location_array.each do |y, x|
+        @main[y -1][x] = 1 unless y == 0
+        @main[y +1][x] = 1 unless y == @main.count - 1
+        @main[y][x +1] = 1 unless x == @main.count
+        @main[y][x -1] = 1 unless x == 0
+      end
     end
-   end
- end
+  end
 
   def locate
     @location_array = []
@@ -28,21 +28,21 @@ class Image
         end
       end
     end
-   
+    
   end
 end
 
 image = Image.new([
-  [0, 0, 0, 0, 0, 0, 0,0,0,0,0],
-  [0 ,0, 0 ,0, 0 ,0, 0,0,0,0,0],
-  [0, 0, 0, 0, 0, 0, 0,0,0,0,0],
-  [0, 0, 0, 0, 0 ,0, 0,0,0,0,0],
-  [0, 0, 0, 0, 0 ,0, 0,0,0,0,0],
-  [0, 0, 0, 0, 0 ,1, 0,0,0,0,0],
-  [0, 0, 0, 0, 0 ,0, 0,0,0,0,0],
-  [0, 0, 0, 0, 0 ,0, 0,0,0,0,0],
-  [0, 0, 0, 0, 0 ,0, 0,0,0,0,0],
-  [0, 0, 0, 0, 0 ,0, 0,0,0,0,0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0 ,0, 0 ,0, 0 ,0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0 ,1, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0],
 
 ])
 puts "-----------------"
